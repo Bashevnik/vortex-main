@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --primary-color: #96C11B;
+    --primary-hover: #88B218;
+    --text-dark: #2C3314;
+    --text-light: #5A5A5A;
+    --white: #FFFFFF;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.5;
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 180px 0;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 51, 20, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 16px;
+    margin-bottom: 35px;
+    font-weight: 500;
+    font-family: var(--font-body);
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 20px 60px;
+    border-radius: 100px;
+    font-weight: 700;
+    text-transform: lowercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(150, 193, 27, 0.3);
+}
+
+/* Principles */
+.principles {
+    padding: 90px 40px;
+    text-align: center;
+    background-color: #F6F7F6;
+}
+
+.principles h2 {
+    font-family: var(--font-heading);
+    font-size: 42px;
+    font-weight: 800;
+    color: #212503;
+    margin-bottom: 40px;
+}
+
+.principles-text {
+    text-align: left;
+    font-size: 15px;
+    color: #4a4a4a;
+    line-height: 1.8;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.principles-text p {
+    margin-bottom: 0px;
+}
+
+.principles-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Request Form */
+.request-form-section {
+    position: relative;
+    padding: 0;
+    height: 1284px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Section with darkgreen.png (803px tall) */
+.request-container-dark {
+    width: 100%;
+    height: 803px;
+    background: url('../imagesyarik/darkgreen.png') repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrapper {
+    background-color: #F8F9F8;
+    /* Pure off-white background */
+    padding: 60px 50px;
+    border-radius: 24px;
+    /* Smoother corners as per screenshot */
+    max-width: 540px;
+    width: 90%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.form-wrapper h2 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 800;
+    color: #2C3314;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #2C3314;
+    opacity: 0.8;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 18px 24px;
+    border: none;
+    border-radius: 50px;
+    /* Fully rounded inputs like in screenshot */
+    background-color: #E2EDE2;
+    /* Light green tint from screenshot */
+    font-family: var(--font-body);
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    background-color: #D6E6D6;
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 12px;
+    /* Rectangular-ish rounded but not 50px as per screenshot button */
+    margin-top: 10px;
+    background-color: #8EB405;
+    /* Brand green */
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    text-transform: lowercase;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(150, 193, 27, 0.3);
+}
+
+.disclaimer {
+    font-size: 11px;
+    color: #8A8E8A;
+    text-align: left;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+/* Gallery */
+.gallery {
+    width: 100%;
+    background-color: var(--primary-color);
+    padding-top: 15px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-overlay h3 {
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .principles h2 {
+        font-size: 28px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-wrapper {
+        padding: 30px 20px;
+    }
+
+    .hero {
+        padding: 100px 0;
+    }
+
+    .gallery-overlay h3 {
+        font-size: 24px;
+    }
+}

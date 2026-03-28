@@ -1,0 +1,256 @@
+:root {
+    --font-family: "Montserrat", sans-serif;
+    --second-family: "Inter", sans-serif;
+    --third-family: "Gilroy", sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+
+
+.welcome-m-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1920px;
+    min-height: 479px;
+    background-image: url("images-conacts/banner.png");
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+}
+
+.welcome-element {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: clamp(32px, 4vw, 64px);
+    line-height: 100%;
+    text-align: center;
+    color: #f6f7f9;
+
+}
+
+
+
+.take-an-order-btn {
+    border-radius: 8px;
+    padding: 10px 40px;
+    width: max-content;
+    min-width: 230px;
+    height: auto;
+    min-height: 44px;
+    background: #8eb405;
+    border: 0;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #f6f7f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    cursor: pointer;
+}
+
+#spc-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.contact-form-container {
+    border-radius: 16px;
+    padding: 40px 5%;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    min-height: 714px;
+    box-shadow: 0 0 5px 0 rgba(37, 42, 1, 0.8);
+    background: #f6f7f9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-title {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 32px;
+    color: #2b300c;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.contact-form .input-group {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-family: var(--second-family);
+    font-size: 20px;
+    color: #1f1f1f;
+    margin-bottom: 12px;
+}
+
+.contact-form label .required {
+    color: #b0b0b0;
+}
+
+.contact-form input {
+    background: #ddeadc;
+    border: none;
+    border-radius: 40px;
+    height: 60px;
+    padding: 0 25px;
+    font-family: var(--second-family);
+    font-size: 18px;
+    color: #1f1f1f;
+    outline: none;
+}
+
+.contact-form .submit-btn {
+    background: #8eb405;
+    color: #252a01;
+    border: none;
+    border-radius: 12px;
+    height: 60px;
+    width: 100%;
+    margin-top: 20px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.privacy-text {
+    font-family: var(--second-family);
+    font-size: 14px;
+    color: #9ba09d;
+    line-height: 1.4;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-content: center;
+    width: 100%;
+}
+
+.company-details-container {
+    width: 100%;
+    max-width: 579px;
+    height: auto;
+    min-height: 714px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.detail-row {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #a8ab9e;
+}
+
+.detail-label {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #252a01;
+}
+
+.detail-value {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #252a01;
+}
+
+.bottom-images-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.support-banner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.support-bg-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    min-height: 100px;
+}
+
+.support-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.support-subtitle {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: clamp(12px, 2.5vw, 24px);
+    color: #f6f7f9;
+    margin: 0 0 5px 0;
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.support-phone {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: clamp(20px, 6vw, 64px);
+    color: #ffffff;
+    margin: 0;
+    white-space: nowrap;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.map-image {
+    margin-top: 0;
+    display: block;
+    width: 100%;
+    height: 500px;
+    filter: brightness(0.9);
+    /* Makes it look slightly more premium and blends better */
+}

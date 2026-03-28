@@ -7,13 +7,12 @@ const initUltimateGlow = () => {
     // 4. Оставь анимации ТОЛЬКО на главной странице
     const path = window.location.pathname;
     const isindex = path.endsWith('index.html') || path === '/' || path.endsWith('index.html') || path === '';
-    
+
     if (!isindex) {
-        console.log("Premium Glow: Disabled on non-index pages.");
         return;
     }
 
-    console.log("Premium Glow 1.5: Initializing...");
+
     const sections = document.querySelectorAll('.premium-glow');
 
     if (!sections.length) return;
@@ -35,7 +34,7 @@ const initUltimateGlow = () => {
             if (match) src = match[1];
         }
 
-        console.log(`Section ${index} - Source extracted:`, src ? src.slice(-20) : "none");
+
 
         // 2. CREATE MOVING LAYER
         if (src) {
