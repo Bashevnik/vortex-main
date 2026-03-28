@@ -1,0 +1,142 @@
+<header class="header" role="banner">
+    <div class="header__top">
+        <div class="container">
+            <div class="header__top-info">
+                <div class="info-item">
+                    <img src="images/map.png" alt="">
+                    <span>Краснодар</span>
+                </div>
+                <div class="info-item">
+                    <img src="images/clock.png" alt="">
+                    <span>24/7</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header__main">
+        <div class="container header__inner">
+            <a href="index.html" class="logo" aria-label="Эко-вортекс — на главную">
+                <img src="images/logo.png" alt="Эко-вортекс">
+            </a>
+
+            <nav class="nav" id="desktop-nav" aria-label="Основная навигация">
+                <ul class="nav__list">
+                    <li><a href="services.html" class="nav__link">Услуги</a></li>
+                    <li><a href="about.html" class="nav__link">О компании</a></li>
+                    <li><a href="contact.html" class="nav__link">Контакты</a></li>
+                    <li><a href="#" class="nav__link" data-modal-open>Заявка</a></li>
+                    <li><a href="faq.html" class="nav__link">Вопросы</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <div class="header__messengers">
+                    <a href="https://wa.me/79669974545" class="messenger-icon messenger-icon--wa"
+                        aria-label="Написать в WhatsApp">
+                        <img src="/images/whatsapp.png" alt="WhatsApp" onerror="this.src='/images/Max.png';">
+                    </a>
+                    <a href="https://t.me/79669974545" class="messenger-icon messenger-icon--tg"
+                        aria-label="Написать в Telegram">
+                        <img src="/images/telegramm.png" alt="Telegram">
+                    </a>
+                    <a href="#" class="messenger-icon messenger-icon--max" aria-label="Написать в Max">
+                        <img src="/images/max.png" alt="Max">
+                    </a>
+                </div>
+
+                <div class="header__divider"></div>
+
+                <button class="btn-call" aria-haspopup="dialog">
+                    <span class="btn-call__icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                                fill="currentColor" />
+                        </svg>
+                    </span>
+                    позвоните нам
+                </button>
+
+                <button class="burger" id="burger-btn" aria-label="Открыть меню" aria-expanded="false"
+                    aria-controls="mobile-nav">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true" role="dialog" aria-label="Мобильное меню">
+        <div class="mobile-nav__backdrop" id="mobile-nav-backdrop"></div>
+
+        <nav class="mobile-nav__panel" tabindex="-1">
+            <!-- Sticky header inside panel -->
+            <div class="mobile-nav__header">
+                <a href="index.html" class="logo mobile-nav__logo">
+                    <img src="images/logo.png" alt="Эко-вортекс">
+                </a>
+                <button class="mobile-nav__close" id="mobile-nav-close" aria-label="Закрыть меню">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Navigation links -->
+            <ul class="mobile-nav__list">
+                <li class="mobile-nav__item"><a href="services.html" class="mobile-nav__link">Услуги</a></li>
+                <li class="mobile-nav__item"><a href="about.html" class="mobile-nav__link">О компании</a></li>
+                <li class="mobile-nav__item"><a href="contact.html" class="mobile-nav__link">Контакты</a></li>
+                <li class="mobile-nav__item"><a href="#" class="mobile-nav__link" data-modal-open>Заявка</a></li>
+                <li class="mobile-nav__item"><a href="faq.html" class="mobile-nav__link">Вопросы</a></li>
+            </ul>
+
+            <div class="mobile-nav__divider"></div>
+
+            <!-- Premium footer with CTA -->
+            <div class="mobile-nav__footer">
+                <p class="mobile-nav__footer-label">Свяжитесь с нами</p>
+
+                <a href="tel:+79669974545" class="mobile-nav__phone">
+                    <span class="mobile-nav__phone-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                                fill="currentColor" />
+                        </svg>
+                    </span>
+                    +7 (966) 997-45-45
+                </a>
+
+                <div class="mobile-nav__actions">
+                    <button class="btn-call mobile-nav__call">
+                        <span class="btn-call__icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                                    fill="currentColor" />
+                            </svg>
+                        </span>
+                        позвоните нам
+                    </button>
+                    <div class="mobile-nav__messenger-group">
+                        <a href="https://wa.me/79669974545" class="messenger-icon messenger-icon--wa"
+                            aria-label="WhatsApp">
+                            <img src="/images/whatsapp.png" alt="WhatsApp" onerror="this.src='/images/telegramm.png';">
+                        </a>
+                        <a href="https://t.me/79669974545" class="messenger-icon messenger-icon--tg"
+                            aria-label="Telegram">
+                            <img src="/images/telegramm.png" alt="Telegram">
+                        </a>
+                        <a href="#" class="messenger-icon messenger-icon--max" aria-label="Max">
+                            <img src="/images/max.png" alt="Max">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
