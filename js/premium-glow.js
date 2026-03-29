@@ -52,8 +52,8 @@ const initUltimateGlow = () => {
             const rect = section.getBoundingClientRect();
             if (rect.top >= vh || rect.bottom <= 0) return;
 
-            const sectionTop  = rect.top + scrollY;
-            const sectionH    = section.offsetHeight;
+            const sectionTop = rect.top + scrollY;
+            const sectionH = section.offsetHeight;
 
             // offset=0 когда секция ровно по центру экрана
             const offset = (scrollY - sectionTop - (vh / 2 - sectionH / 2)) * SPEED;

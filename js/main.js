@@ -48,6 +48,59 @@ document.addEventListener('DOMContentLoaded', () => {
     initWorksSteps();
     initCalculator();
     initVideoAutoplay();
+
+    // Глобальный слушатель кликов для открытия модального окна
+    document.addEventListener('click', (e) => {
+        // Добавляем все возможные варианты классов кнопок для открытия модального окна
+        const triggerSelector = '.btn-call, .cll-btn, .service__btn, .calc-btn-final, .hero_btn, .hero-btn, .stroitelniymusor_krasnodae_btn_call, .welcome-element, .welcome-element-btn, .services_card_btn, .calculate__btn, .btn-primary, .cta-banner__btn, .hero_services .hero_btn, .take-an-order-btn, .stroitelniymusor_krasnodae_btn button';
+        const trigger = e.target.closest(triggerSelector);
+        
+        if (trigger) {
+            e.preventDefault();
+            
+            // Если модалка еще не инициализирована (плейсхолдер пуст)
+            if (!modal || !modal.querySelector('.modal__content')) {
+                initModal();
+                if (!modal) return;
+            }
+
+            const modalForm = modal.querySelector('.modal__form');
+            const modalTitle = modal.querySelector('.modal__title');
+            const modalSubtitle = modal.querySelector('.modal__subtitle');
+            const modalContacts = modal.querySelector('.modal__contacts');
+            const infoContainer = modal.querySelector('.modal__info-container');
+            
+            // РЕЖИМ ФОРМЫ: показываем форму и подзаголовок, прячем контент карточки
+            if (modalForm) modalForm.style.display = 'flex';
+            if (modalSubtitle) modalSubtitle.style.display = 'block';
+            if (modalContacts) modalContacts.style.display = 'block';
+            if (infoContainer) infoContainer.style.display = 'none';
+            
+            if (modalTitle) {
+                modalTitle.textContent = 'Оставить заявку';
+                modalTitle.style.marginBottom = '15px';
+            }
+            
+            if (typeof openModal === 'function') {
+                openModal();
+            }
+        }
+
+        // Логика тоггла для карточек принципов (для мобильных и кликов)
+        const cardTrigger = e.target.closest('.principles_cards_card');
+        if (cardTrigger) {
+            const isAlreadyActive = cardTrigger.classList.contains('active');
+            // Убираем актив со всех остальных
+            document.querySelectorAll('.principles_cards_card').forEach(c => c.classList.remove('active'));
+            // Если не была активной - открываем, если была - закрылась
+            if (!isAlreadyActive) {
+                cardTrigger.classList.add('active');
+            }
+        } else if (!e.target.closest('.principles_cards_card')) {
+            // Клик вне карточек - закрываем все
+            document.querySelectorAll('.principles_cards_card').forEach(c => c.classList.remove('active'));
+        }
+    });
 });
 
 // ============================================================
@@ -99,20 +152,6 @@ function initModal() {
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
-    });
-
-    document.addEventListener('click', (e) => {
-        const trigger = e.target.closest('.btn-call, .cll-btn, .service__btn, .calc-btn-final, .hero_btn, .principles_cards_card, .stroitelniymusor_krasnodae_btn_call');
-        if (trigger) {
-            e.preventDefault();
-            if (openModal) {
-                openModal();
-            } else {
-                console.warn('Modal not initialized yet. Re-initializing...');
-                initModal(); 
-                if (openModal) openModal();
-            }
-        }
     });
 
     const form = modal.querySelector('.modal__form');
