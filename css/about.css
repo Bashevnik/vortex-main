@@ -211,7 +211,7 @@
 
 .stroitelniymusor_krasnodae {
     max-height: 556px;
-    background-image: url('/images/stroitelniymusorimg.png');
+    background-image: url('../images/stroitelniymusorimg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

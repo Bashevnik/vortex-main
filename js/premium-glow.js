@@ -3,10 +3,6 @@
  * Reverted to classic translate3d but with fixed centering.
  */
 const initUltimateGlow = () => {
-    const path = window.location.pathname;
-    const isIndex = path.endsWith('index.html') || path === '/' || path === '';
-    if (!isIndex) return;
-
     const sections = document.querySelectorAll('.premium-glow');
     if (!sections.length) return;
 

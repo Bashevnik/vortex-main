@@ -1,5 +1,5 @@
 .hero_services {
-    background-image: url("/images/application_hero_img.png");
+    background-image: url("../images/application_hero_img.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
