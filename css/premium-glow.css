@@ -3,6 +3,7 @@
 .premium-glow {
     position: relative !important;
     overflow: hidden !important;
+    isolation: isolate;
 }
 
 /* Base content on top */
@@ -11,16 +12,15 @@
     z-index: 100 !important;
 }
 
-/* Background image parallax layer - ADDED EXTRA HEIGHT TO PREVENT GAPS */
+/* Background image parallax layer - Optimized height buffer */
 .parallax-bg-image {
     position: absolute;
-    /* Extra large cover based on viewport to mathematically prevent gray edges on extreme scroll */
-    top: -60vh;
+    top: -300px;
     left: 0;
     width: 100%;
-    height: calc(100% + 120vh);
+    height: calc(100% + 600px);
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     z-index: 5;
     will-change: transform;

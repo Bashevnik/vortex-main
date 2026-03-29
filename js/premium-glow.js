@@ -1,59 +1,46 @@
-
 /**
- * Ultimate Premium Backgrounds - Version 1.5
- * Robust background extraction and scroll parallax.
+ * Premium Parallax Backgrounds — v2.1
+ * Reverted to classic translate3d but with fixed centering.
  */
 const initUltimateGlow = () => {
-    // 4. Оставь анимации ТОЛЬКО на главной странице
     const path = window.location.pathname;
-    const isindex = path.endsWith('index.html') || path === '/' || path.endsWith('index.html') || path === '';
-
-    if (!isindex) {
-        return;
-    }
-
+    const isIndex = path.endsWith('index.html') || path === '/' || path === '';
+    if (!isIndex) return;
 
     const sections = document.querySelectorAll('.premium-glow');
-
     if (!sections.length) return;
 
-    sections.forEach((section, index) => {
+    sections.forEach((section) => {
         if (section.querySelector('.parallax-bg-image')) return;
 
-        // 1. EXTRACT DATA
         const style = window.getComputedStyle(section);
         const bgImg = style.backgroundImage;
-        const videoImg = section.querySelector('.process__video');
+        const videoEl = section.querySelector('.process__video');
 
         let src = null;
-        if (videoImg) {
-            src = videoImg.src;
-            videoImg.style.display = 'none';
+        if (videoEl) {
+            src = videoEl.src;
+            videoEl.style.display = 'none';
         } else if (bgImg && bgImg !== 'none') {
-            const match = bgImg.match(/url\(['"]?(.*?)['"]?\)/);
-            if (match) src = match[1];
+            const matches = [...bgImg.matchAll(/url\(['"]?(.*?)['"]?\)/g)];
+            if (matches.length) src = matches[matches.length - 1][1];
         }
 
-
-
-        // 2. CREATE MOVING LAYER
         if (src) {
             const imgLayer = document.createElement('div');
             imgLayer.className = 'parallax-bg-image';
             imgLayer.style.backgroundImage = `url("${src}")`;
-
-            // Clean section to avoid double vision
             section.style.background = 'none';
             section.prepend(imgLayer);
         }
 
-        // 3. CREATE GLOW LAYER
         const glowLayer = document.createElement('div');
         glowLayer.className = 'premium-glow-visuals';
         section.prepend(glowLayer);
     });
 
-    // 4. SCROLL PARALLAX
+    const SPEED = 0.4; // Нормальная динамика (как была раньше)
+
     const updateParallax = () => {
         const scrollY = window.pageYOffset;
         const vh = window.innerHeight;
@@ -63,21 +50,22 @@ const initUltimateGlow = () => {
             if (!img) return;
 
             const rect = section.getBoundingClientRect();
-            const sectionTop = rect.top + scrollY;
+            if (rect.top >= vh || rect.bottom <= 0) return;
 
-            if (rect.top < vh && rect.bottom > 0) {
-                const speed = 0.5; // Intensity
-                const offset = (scrollY - sectionTop) * speed;
-                img.style.transform = `translate3d(0, ${offset}px, 0)`;
-            }
+            const sectionTop  = rect.top + scrollY;
+            const sectionH    = section.offsetHeight;
+
+            // offset=0 когда секция ровно по центру экрана
+            const offset = (scrollY - sectionTop - (vh / 2 - sectionH / 2)) * SPEED;
+
+            img.style.transform = `translate3d(0, ${offset.toFixed(2)}px, 0)`;
         });
     };
 
     window.addEventListener('scroll', updateParallax, { passive: true });
+    window.addEventListener('resize', updateParallax, { passive: true });
     updateParallax();
 };
 
-// Use window.onload to be 100% sure all CSS is loaded and applied
 window.addEventListener('load', initUltimateGlow);
-// Back-up DOMContentLoaded
 document.addEventListener('DOMContentLoaded', initUltimateGlow);
