@@ -263,15 +263,63 @@ body {
     flex-shrink: 0;
 }
 
-/* --- Premium Messenger Group --- */
+/* --- Universal Messenger Icons --- */
+.messenger-icon {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    flex-shrink: 0;
+    background: transparent;
+}
+
+/* Original Max Icon Style - Universal */
+.messenger-icon--max {
+    background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%) !important;
+    box-shadow: 0 2px 8px rgba(168, 85, 247, 0.4) !important;
+}
+
+.messenger-icon--max img {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+/* New circular icons for WA and TG - Universal */
+.messenger-icon--wa,
+.messenger-icon--tg {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.messenger-icon--wa img,
+.messenger-icon--tg img {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.messenger-icon img {
+    object-fit: contain;
+    display: block;
+}
+
+.messenger-icon:hover {
+    transform: scale(1.1) translateY(-1px);
+}
+
+/* --- Premium Messenger Group Wrapper --- */
 .header__messengers {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     background: rgba(163, 217, 167, 0.12);
     border: 1px solid rgba(163, 217, 167, 0.35);
     border-radius: 100px;
-    padding: 6px 10px;
+    padding: 6px 12px;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 2px 12px rgba(142, 180, 5, 0.08);
@@ -279,60 +327,13 @@ body {
 }
 
 .header__messengers:hover {
-    box-shadow: 0 4px 20px rgba(142, 180, 5, 0.16);
+    box-shadow: 0 4px 15px rgba(142, 180, 5, 0.15);
 }
 
-.header__divider {
-    width: 1px;
-    height: 32px;
-    background: linear-gradient(180deg, transparent, rgba(163, 217, 167, 0.5), transparent);
-    flex-shrink: 0;
-}
-
-.messenger-icon {
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    flex-shrink: 0;
-}
-
-.messenger-icon--wa {
-    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.35);
-}
-
-.messenger-icon--tg {
-    background: linear-gradient(135deg, #54a9eb 0%, #2d8cc8 100%);
-    box-shadow: 0 2px 8px rgba(84, 169, 235, 0.35);
-}
-
-.messenger-icon--max {
-    background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
-    box-shadow: 0 2px 8px rgba(168, 85, 247, 0.4);
-}
-
-/* Legacy messenger-icon без модификатора (mobile nav) */
-.messenger-icon:not(.messenger-icon--max):not(.messenger-icon--tg):not(.messenger-icon--wa) {
-    background: var(--brand-green-messenger);
-    padding: 10px;
-}
-
-.messenger-icon:hover {
-    transform: scale(1.1) translateY(-1px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-}
-
-.messenger-icon img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    display: block;
+/* Footer specific overrides for messengers */
+.footer__messengers {
+    justify-content: center !important;
+    padding: 6px 12px !important;
 }
 
 /* --- Premium Call Button --- */
@@ -1833,16 +1834,7 @@ body {
     gap: 10px;
 }
 
-.modal__socials .messenger-icon {
-    width: 44px;
-    height: 44px;
-    padding: 10px;
-}
-
-.modal__socials .messenger-icon img {
-    width: 24px;
-    height: auto;
-}
+/* Universal styles apply to .messenger-icon */
 
 .footer {
     background-color: var(--brand-dark);
@@ -2297,7 +2289,8 @@ body {
 .mobile-nav__messenger-group .messenger-icon {
     width: 54px;
     height: 54px;
-    border-radius: 14px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* Phone number block */
@@ -2662,24 +2655,7 @@ body {
         gap: 8px;
     }
 
-    .header__actions .messenger-icon {
-        width: 38px;
-        /* Чуть больше */
-        height: 38px;
-        background: #f6f7f9;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .header__actions .messenger-icon img {
-        width: 18px;
-        height: 18px;
-        object-fit: contain;
-    }
+    /* Universal styles apply to .messenger-icon */
 
     .logo img {
         width: 190px;
@@ -4401,20 +4377,14 @@ body {
 }
 
 .mobile-nav__messenger-group .messenger-icon {
-    width: 48px;
-    height: 48px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
+    /* Universal styles apply to .messenger-icon */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
-.mobile-nav__messenger-group .messenger-icon img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
+.mobile-nav__messenger-group .messenger-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .mobile-nav__messenger-group .messenger-icon:hover {
