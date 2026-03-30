@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     includeComponent('modal-placeholder', 'components/modal.html').then(() => {
         initModal();
-        initTimedPopup();
+        // initTimedPopup(); /* disabled automatic popup */
     });
 
     initServiceTabs();

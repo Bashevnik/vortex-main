@@ -145,15 +145,13 @@ body {
     /* Offset for fixed header */
 }
 
-@media (max-width: 991px) {
-    body {
-        padding-top: 100px; /* Airy mobile header height */
+/* Remove fixed positioning on mobile devices so header scrolls away naturally */
+@media (max-width: 1024px) {
+    .header {
+        position: absolute !important;
     }
-}
-
-@media (max-width: 425px) {
     body {
-        padding-top: 90px; /* Balanced for small phones */
+        padding-top: 0 !important;
     }
 }
 
