@@ -145,6 +145,18 @@ body {
     /* Offset for fixed header */
 }
 
+@media (max-width: 991px) {
+    body {
+        padding-top: 74px; /* Smaller offset for mobile header */
+    }
+}
+
+@media (max-width: 425px) {
+    body {
+        padding-top: 64px; /* Even smaller for small phones */
+    }
+}
+
 .header__top {
     background-color: var(--brand-green-light);
     padding: 6px 0;
@@ -2103,6 +2115,11 @@ body {
 
 .mobile-nav__close span:last-child {
     transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Ensure mobile nav close button is in similar spot to burger for seamless UX */
+.mobile-nav__header {
+    height: 74px; /* Matches mobile header height approx */
 }
 
 /* Nav list */
@@ -5296,4 +5313,140 @@ body {
 .principles_cards_card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================================ 
+   NEW MOBILE ADAPTIVE OVERRIDES
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .container {
+        margin: 0 20px;
+    }
+
+    .header__main {
+        padding: 10px 0;
+    }
+
+    .logo img {
+        width: 130px;
+    }
+
+    .header__inner {
+        gap: 12px;
+    }
+
+    .header__main .messenger-icon {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .header__main .header__messengers {
+        padding: 4px 10px;
+        gap: 8px;
+    }
+
+    .header__divider {
+        display: none;
+    }
+
+    .btn-call {
+        display: none !important;
+    }
+
+    .hero__title {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 425px) {
+    .container {
+        margin: 0 16px;
+    }
+
+    .header__main {
+        padding: 8px 0;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .header__inner {
+        gap: 6px;
+    }
+
+    .header__main .messenger-icon {
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .header__main .header__messengers {
+        padding: 2px 6px;
+        gap: 4px;
+        border-radius: 50px;
+    }
+
+    .burger {
+        width: 38px;
+        height: 38px;
+        gap: 4px;
+    }
+
+    .burger__line {
+        width: 18px;
+    }
+
+    .hero__title {
+        font-size: 26px;
+    }
+
+    .mobile-nav__header {
+        height: 64px;
+        padding: 10px 16px;
+    }
+    
+    .mobile-nav__logo img {
+        height: 24px;
+    }
+}
+
+.cll-btn, .calculate__btn {
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: clip;
+    font-size: clamp(14px, 4vw, 18px) !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px !important;
+    height: 52px !important;
+    max-width: 100%;
+}
+
+.burger.burger--open {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+* {
+    max-width: 100vw;
+}
+nav__logo img {
+        height: 28px;
+    }
+}
+
+/* Burger Animation State (Synced with JS) */
+.burger.burger--open {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }

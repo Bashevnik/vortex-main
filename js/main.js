@@ -115,11 +115,15 @@ function initBurgerMenu() {
 
     const openMenu = () => {
         mobileNav.classList.add('mobile-nav--open');
+        burgerBtn.classList.add('burger--open');
+        burgerBtn.setAttribute('aria-expanded', 'true');
         document.body.classList.add('body--locked');
     };
 
     const closeMenu = () => {
         mobileNav.classList.remove('mobile-nav--open');
+        burgerBtn.classList.remove('burger--open');
+        burgerBtn.setAttribute('aria-expanded', 'false');
         document.body.classList.remove('body--locked');
     };
 
