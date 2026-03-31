@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Глобальный слушатель кликов для открытия модального окна
     document.addEventListener('click', (e) => {
         // Добавляем все возможные варианты классов кнопок для открытия модального окна
-        const triggerSelector = '.btn-call, .cll-btn, .service__btn, .calc-btn-final, .hero_btn, .hero-btn, .stroitelniymusor_krasnodae_btn_call, .welcome-element, .welcome-element-btn, .services_card_btn, .calculate__btn, .btn-primary, .cta-banner__btn, .hero_services .hero_btn, .take-an-order-btn, .stroitelniymusor_krasnodae_btn button';
+        const triggerSelector = '.btn-call, .cll-btn, .service__btn, .calc-btn-final, .hero_btn, .hero-btn, .stroitelniymusor_krasnodae_btn_call, .welcome-element-btn, .services_card_btn, .calculate__btn, .btn-primary, .cta-banner__btn, .hero_services .hero_btn, .take-an-order-btn, .stroitelniymusor_krasnodae_btn button';
         const trigger = e.target.closest(triggerSelector);
         
         if (trigger) {
@@ -228,13 +228,21 @@ function initServiceTabs() {
             load: 'до 5 тонн',
             img: 'images/main_containers/8container.png'
         },
+        '12': {
+            title: 'Контейнер 12 м³',
+            desc: 'Оптимальный выбор для вывоза строительного мусора после ремонта квартиры или небольшого офиса.',
+            volume: '12 м³',
+            material: 'сталь 3-4 мм',
+            load: 'до 7 тонн',
+            img: 'images/main_containers/12.jpg'
+        },
         '16': {
             title: 'Контейнер 16 м³',
             desc: 'Средний объем для вывоза КГМ и строительного мусора. Подходит для демонтажных работ.',
             volume: '16 м³',
             material: 'сталь 4 мм',
             load: 'до 10 тонн',
-            img: 'images/main_containers/8container.png'
+            img: 'images/main_containers/16.jpg'
         },
         '20': {
             title: 'Контейнер 20 м³',
@@ -242,7 +250,7 @@ function initServiceTabs() {
             volume: '20 м³',
             material: 'сталь 4 мм',
             load: 'до 12 тонн',
-            img: 'images/main_containers/8container.png'
+            img: 'images/main_containers/20.jpg'
         },
         '27': {
             title: 'Контейнер 27 м³',
@@ -250,15 +258,7 @@ function initServiceTabs() {
             volume: '27 м³',
             material: 'усиленная сталь 4-5 мм',
             load: 'до 15 тонн',
-            img: 'images/main_containers/8container.png'
-        },
-        '35': {
-            title: 'Контейнер 35 м³',
-            desc: 'Максимальный объем. Предназначен для вывоза огромных партий промышленных отходов.',
-            volume: '35 м³',
-            material: 'усиленная сталь 5 мм',
-            load: 'до 15 тонн',
-            img: 'images/main_containers/8container.png'
+            img: 'images/main_containers/27.jpg'
         }
     };
 

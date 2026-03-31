@@ -148,7 +148,7 @@ body {
 /* Remove fixed positioning on mobile devices so header scrolls away naturally */
 @media (max-width: 1024px) {
     .header {
-        position: absolute !important;
+        position: relative !important;
     }
     body {
         padding-top: 0 !important;
@@ -526,7 +526,7 @@ body {
 .service__img-wrapper {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 700px;
     max-width: 1140px;
     min-width: 620px;
 }

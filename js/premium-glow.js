@@ -51,10 +51,20 @@ const initUltimateGlow = () => {
             const sectionTop = rect.top + scrollY;
             const sectionH = section.offsetHeight;
 
-            // offset=0 когда секция ровно по центру экрана
-            const offset = (scrollY - sectionTop - (vh / 2 - sectionH / 2)) * SPEED;
+            // Расчет смещения центра секции относительно центра экрана
+            const sectionCenter = sectionTop + sectionH / 2;
+            const scrollCenter = scrollY + vh / 2;
+            
+            // Смещение (0 когда секция по центру экрана)
+            let offset = (scrollCenter - sectionCenter) * SPEED;
 
-            img.style.transform = `translate3d(0, ${offset.toFixed(2)}px, 0)`;
+            // Ограничиваем смещение, чтобы картинка не "уходила" за края (буфер 50vh в СSS)
+            // Мы оставляем запас в 5vh для надежности
+            const maxOffset = vh * 0.45; 
+            const clampedOffset = Math.max(-maxOffset, Math.min(maxOffset, offset));
+
+            // Применяем трансформ с учетом начального центрирования (-50%, -50%)
+            img.style.transform = `translate3d(-50%, calc(-50% + ${clampedOffset.toFixed(2)}px), 0) scale(1.15)`;
         });
     };
 
