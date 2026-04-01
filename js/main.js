@@ -17,11 +17,11 @@ async function includeComponent(targetId, filePath) {
                 document.body.appendChild(div);
             }
         }
-        
+
         if (targetId === 'header-placeholder') {
             initBurgerMenu();
         }
-        
+
         return Promise.resolve();
     } catch (error) {
         console.error('Ошибка загрузки компонента:', error);
@@ -32,13 +32,13 @@ async function includeComponent(targetId, filePath) {
 document.addEventListener('DOMContentLoaded', () => {
     includeComponent('header-placeholder', 'components/header.html');
     includeComponent('footer-placeholder', 'components/footer.html');
-    
+
     if (!document.getElementById('modal-placeholder')) {
         const div = document.createElement('div');
         div.id = 'modal-placeholder';
         document.body.appendChild(div);
     }
-    
+
     includeComponent('modal-placeholder', 'components/modal.html').then(() => {
         initModal();
         // initTimedPopup(); /* disabled automatic popup */
@@ -54,10 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Добавляем все возможные варианты классов кнопок для открытия модального окна
         const triggerSelector = '.btn-call, .cll-btn, .service__btn, .calc-btn-final, .hero_btn, .hero-btn, .stroitelniymusor_krasnodae_btn_call, .welcome-element-btn, .services_card_btn, .calculate__btn, .btn-primary, .cta-banner__btn, .hero_services .hero_btn, .take-an-order-btn, .stroitelniymusor_krasnodae_btn button';
         const trigger = e.target.closest(triggerSelector);
-        
+
         if (trigger) {
             e.preventDefault();
-            
+
             // Если модалка еще не инициализирована (плейсхолдер пуст)
             if (!modal || !modal.querySelector('.modal__content')) {
                 initModal();
@@ -69,18 +69,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const modalSubtitle = modal.querySelector('.modal__subtitle');
             const modalContacts = modal.querySelector('.modal__contacts');
             const infoContainer = modal.querySelector('.modal__info-container');
-            
+
             // РЕЖИМ ФОРМЫ: показываем форму и подзаголовок, прячем контент карточки
             if (modalForm) modalForm.style.display = 'flex';
             if (modalSubtitle) modalSubtitle.style.display = 'block';
             if (modalContacts) modalContacts.style.display = 'block';
             if (infoContainer) infoContainer.style.display = 'none';
-            
+
             if (modalTitle) {
                 modalTitle.textContent = 'Оставить заявку';
                 modalTitle.style.marginBottom = '15px';
             }
-            
+
             if (typeof openModal === 'function') {
                 openModal();
             }
@@ -170,7 +170,7 @@ function initModal() {
 
 function initTimedPopup() {
     if (sessionStorage.getItem('popupShown')) return;
-    
+
     setTimeout(() => {
         if (modal && !modal.classList.contains('modal--active')) {
             openModal();
@@ -199,7 +199,7 @@ function initCalculator() {
 
         let baseRate = volume > 20 ? 1800 : 2200;
         let total = volume * baseRate * typeFactor * urgencyFactor;
-        
+
         if (total < 1990) total = 1990;
 
         const min = Math.round(total * 0.9);
@@ -211,7 +211,7 @@ function initCalculator() {
     [volumeInput, typeSelect, urgencySelect].forEach(el => {
         if (el) el.addEventListener('input', calculate);
     });
-    
+
     calculate();
 }
 
@@ -246,7 +246,7 @@ function initServiceTabs() {
         },
         '20': {
             title: 'Контейнер 20 м³',
-            desc: 'Вместительный бункер для крупных объектов. Оптимален для вывоза легкого объемного хлама.',
+            desc: 'Вместительный бункер для крупных объектов. Оптимален для вывоза легкого объемного мусор/мусора.',
             volume: '20 м³',
             material: 'сталь 4 мм',
             load: 'до 12 тонн',
@@ -299,7 +299,7 @@ function initWorksSteps() {
     const titleEl = document.querySelector('.works_steps_body_tittle');
     const descEl = document.querySelector('.works_steps_body_desk');
     const imgEl = document.querySelector('.works_steps_body_img');
-    
+
     if (!btns.length || !titleEl) return;
 
     btns.forEach(btn => {

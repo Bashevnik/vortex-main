@@ -34,7 +34,7 @@
 .services__title {
     font-family: var(--third-family);
     font-weight: 800;
-    font-size: 48px;
+    font-size: 22px;
     color: #252a01;
     margin-bottom: 40px;
 }
@@ -44,7 +44,8 @@
     flex-direction: column;
 }
 
-.services__description>p {
+.services__description>p,
+.services__description>h2 {
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 16px;
@@ -53,11 +54,19 @@
     margin-bottom: 40px;
 }
 
+/* Titles inside descriptions still have bold weight */
+.services__description h2.services__subtitle {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
 .services__list {
     border-top: 1px solid #252a01;
 }
 
 .services_card_img img {
+    height: 100%;
     border-radius: 16px;
     max-width: 263px;
     max-height: 263px;
@@ -381,6 +390,182 @@
 
     .features_card_bottom {
         border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 480px) {
+    .features_header_text {
+        font-size: 15px;
+    }
+
+    .workflow_col2 {
+        grid-template-columns: 1fr;
+    }
+
+    .services_card_stats {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .stat {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        padding-bottom: 8px;
+        width: 100%;
+    }
+
+    .stat:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .services_card_img img {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+/* ============================================================
+   WHO IS VORTEX FOR - Section Style
+   ============================================================ */
+.who-is-vortex {
+    padding: 100px 0;
+    background: #fff;
+    overflow: hidden;
+}
+
+.who-is-vortex__inner {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+}
+
+.who-is-vortex__subtitle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--brand-green-lime);
+    margin-bottom: 24px;
+}
+
+.who-is-vortex__subtitle::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 10px;
+    background: var(--brand-green-lime);
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+.who-is-vortex__title {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1a1a1a;
+}
+
+.who-is-vortex__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.who-is-vortex__item {
+    border-top: 1px solid #ddd;
+    padding: 24px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.who-is-vortex__item:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.who-is-vortex__item-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.who-is-vortex__icon-wrapper {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.who-is-vortex__icon {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: transparent;
+    z-index: 3;
+}
+
+.who-is-vortex__item:hover .who-is-vortex__icon {
+    border-color: var(--brand-green-lime);
+    background: var(--brand-green-lime);
+    transform: rotate(45deg) scale(1.1);
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(142, 180, 5, 0.3);
+}
+
+.who-is-vortex__item-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    transition: 0.3s;
+}
+
+.who-is-vortex__item:hover .who-is-vortex__item-title {
+    color: #000;
+}
+
+.who-is-vortex__item-body {
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-left: 54px;
+    /* icon width + gap */
+}
+
+.who-is-vortex__item:hover .who-is-vortex__item-body {
+    max-height: 480px;
+    opacity: 1;
+    padding-top: 16px;
+}
+
+.who-is-vortex__item-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+}
+
+@media (max-width: 992px) {
+    .who-is-vortex__inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .who-is-vortex {
+        padding: 60px 0;
+    }
+
+    .who-is-vortex__item-title {
+        font-size: 18px;
+    }
+
+    .who-is-vortex__item-body {
+        padding-left: 50px;
     }
 }
 
