@@ -154,6 +154,7 @@
 }
 
 .steps_header_btn {
+    cursor: pointer;
     border-radius: 100px;
     padding: 5px 20px;
     width: 181px;
@@ -220,7 +221,6 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
 }
 
 .stroitelniymusor_krasnodae_content {

@@ -226,7 +226,7 @@ function initServiceTabs() {
             volume: '8 м³',
             material: 'сталь 3 мм',
             load: 'до 5 тонн',
-            img: 'images/main_containers/8container.png'
+            img: 'images/main_containers/8.png'
         },
         '12': {
             title: 'Контейнер 12 м³',
@@ -234,7 +234,7 @@ function initServiceTabs() {
             volume: '12 м³',
             material: 'сталь 3-4 мм',
             load: 'до 7 тонн',
-            img: 'images/main_containers/12.jpg'
+            img: 'images/main_containers/12м3.png'
         },
         '16': {
             title: 'Контейнер 16 м³',
@@ -242,7 +242,7 @@ function initServiceTabs() {
             volume: '16 м³',
             material: 'сталь 4 мм',
             load: 'до 10 тонн',
-            img: 'images/main_containers/16.jpg'
+            img: 'images/main_containers/16м3.png'
         },
         '20': {
             title: 'Контейнер 20 м³',
@@ -250,7 +250,7 @@ function initServiceTabs() {
             volume: '20 м³',
             material: 'сталь 4 мм',
             load: 'до 12 тонн',
-            img: 'images/main_containers/20.jpg'
+            img: 'images/main_containers/20м3.png'
         },
         '27': {
             title: 'Контейнер 27 м³',
@@ -258,7 +258,7 @@ function initServiceTabs() {
             volume: '27 м³',
             material: 'усиленная сталь 4-5 мм',
             load: 'до 15 тонн',
-            img: 'images/main_containers/27.jpg'
+            img: 'images/main_containers/27м3.png'
         }
     };
 
