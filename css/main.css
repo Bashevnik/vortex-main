@@ -4993,6 +4993,8 @@ body {
     .case-stat__val {
         font-size: 22px;
     }
+
+
 }
 
 /* ============================================================
@@ -5694,17 +5696,14 @@ body {
 
     .header__inner>.logo {
         position: absolute;
-        left: 50%;
+        left: 0;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateY(-50%);
         margin: 0;
         z-index: 5;
     }
 
-    .header__inner>.logo img {
-        width: 160px;
-        height: auto;
-    }
+
 
     /* Actions positioning */
     .header__actions {
