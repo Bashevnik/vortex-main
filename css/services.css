@@ -54,9 +54,9 @@
     margin-bottom: 40px;
 }
 
-/* Titles inside descriptions still have bold weight */
+/* Subtitles inside descriptions now have normal weight to match requested style */
 .services__description h2.services__subtitle {
-    font-weight: 700;
+    font-weight: 400;
     font-size: 20px;
     margin-bottom: 12px;
 }
