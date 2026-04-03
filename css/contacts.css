@@ -16,7 +16,7 @@ body {
     width: 100%;
     max-width: 1920px;
     min-height: 479px;
-    background-image: url("images-conacts/banner.png");
+    background-image: url("../images-conacts/banner.png");
     background-size: cover;
     background-position: center;
     margin: 0 auto;
@@ -35,7 +35,7 @@ body {
 
 
 .take-an-order-btn {
-    border-radius: 8px;
+    border-radius: 16px;
     padding: 10px 40px;
     width: max-content;
     min-width: 230px;

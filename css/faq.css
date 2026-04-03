@@ -98,31 +98,15 @@ img {
     padding: 100px 0;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    position: relative;
     color: #fff;
     text-align: center;
 }
 
-.info-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    /* Full section overlay */
-}
 
 .info-banner-content {
-    background: transparent;
-    /* Remove the inner block */
     padding: 20px 0;
     max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    z-index: 2;
 }
 
 .info-text p {
