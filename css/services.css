@@ -17,9 +17,7 @@
     padding: 220px 0 100px 0;
 }
 
-.services {
-    margin-bottom: 170px;
-}
+
 
 .services_content {
     display: flex;
@@ -34,7 +32,7 @@
 .services__title {
     font-family: var(--third-family);
     font-weight: 800;
-    font-size: 22px;
+    font-size: 27px;
     color: #252a01;
     margin-bottom: 40px;
 }
@@ -54,12 +52,24 @@
     margin-bottom: 40px;
 }
 
-/* Subtitles inside descriptions now have normal weight to match requested style */
+/* Subtitles inside descriptions are bold */
 .services__description h2.services__subtitle {
-    font-weight: 400;
+    font-weight: 800;
     font-size: 20px;
     margin-bottom: 12px;
+    color: #252a01;
 }
+
+/* Regular paragraph h2s (body text) are normal weight */
+.services__description h2:not(.services__subtitle),
+.services__description p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 24px;
+    color: #252a01;
+}
+
 
 .services__list {
     border-top: 1px solid #252a01;
@@ -69,7 +79,7 @@
     height: 100%;
     border-radius: 16px;
     max-width: 263px;
-    max-height: 263px;
+    max-height: 335px;
 }
 
 .services_card {
@@ -427,8 +437,123 @@
 }
 
 /* ============================================================
-   WHO IS VORTEX FOR - Section Style
+   ALSO WE DO - Section
    ============================================================ */
+.also-we-do {
+    padding: 80px 0;
+    background: #f6f7f9;
+}
+
+.also-we-do__title {
+    font-family: var(--third-family);
+    font-weight: 800;
+    font-size: 48px;
+    color: #252a01;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.also-we-do__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 80px;
+}
+
+.also-we-do__col {
+    display: flex;
+    flex-direction: column;
+}
+
+.also-we-do__item {
+    border-bottom: 1px solid #d0d0d0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.also-we-do__item:first-child {
+    border-top: 1px solid #d0d0d0;
+}
+
+.also-we-do__item-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    color: #252a01;
+    user-select: none;
+}
+
+.also-we-do__item-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 155%;
+    color: #555;
+    padding: 0 0 0 38px;
+    transition: max-height 0.35s ease, opacity 0.35s ease, padding 0.35s ease;
+}
+
+/* Desktop: hover раскрывает описание */
+@media (hover: hover) {
+    .also-we-do__item:hover .also-we-do__item-body {
+        max-height: 120px;
+        opacity: 1;
+        padding: 0 0 16px 38px;
+    }
+
+    .also-we-do__item:hover .also-we-do__arrow {
+        transform: rotate(90deg);
+    }
+}
+
+/* Mobile + JS: класс .active раскрывает описание */
+.also-we-do__item.active .also-we-do__item-body {
+    max-height: 120px;
+    opacity: 1;
+    padding: 0 0 16px 38px;
+}
+
+.also-we-do__item.active .also-we-do__arrow {
+    transform: rotate(90deg);
+}
+
+.also-we-do__arrow {
+    color: #8eb405;
+    font-size: 14px;
+    flex-shrink: 0;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    .also-we-do {
+        padding: 60px 0;
+    }
+
+    .also-we-do__title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .also-we-do__grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .also-we-do__col:last-child .also-we-do__item:first-child {
+        border-top: none;
+    }
+}
+
 .who-is-vortex {
     padding: 100px 0;
     background: #fff;

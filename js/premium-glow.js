@@ -1,8 +1,13 @@
 /**
  * Premium Parallax Backgrounds — v2.1
- * Reverted to classic translate3d but with fixed centering.
+ * Параллакс работает только на главной странице (index.html).
  */
 const initUltimateGlow = () => {
+    // Параллакс только на главной странице
+    const path = window.location.pathname;
+    const isIndexPage = path === '/' || path === '' || path.endsWith('/index.html') || path.endsWith('index.html');
+    if (!isIndexPage) return;
+
     const sections = document.querySelectorAll('.premium-glow');
     if (!sections.length) return;
 
@@ -35,7 +40,7 @@ const initUltimateGlow = () => {
         section.prepend(glowLayer);
     });
 
-    const SPEED = 0.4; // Нормальная динамика (как была раньше)
+    const SPEED = 0.25; // Снижено для повышения качества изображений (меньше растягивание)
 
     const updateParallax = () => {
         const scrollY = window.pageYOffset;
@@ -60,11 +65,11 @@ const initUltimateGlow = () => {
 
             // Ограничиваем смещение, чтобы картинка не "уходила" за края (буфер 50vh в СSS)
             // Мы оставляем запас в 5vh для надежности
-            const maxOffset = vh * 0.45; 
+            const maxOffset = vh * 0.18; // Запас под overhang 40vh в CSS
             const clampedOffset = Math.max(-maxOffset, Math.min(maxOffset, offset));
 
             // Применяем трансформ с учетом начального центрирования (-50%, -50%)
-            img.style.transform = `translate3d(-50%, calc(-50% + ${clampedOffset.toFixed(2)}px), 0) scale(1.15)`;
+            img.style.transform = `translate3d(-50%, calc(-50% + ${clampedOffset.toFixed(2)}px), 0) scale(1.05)`;
         });
     };
 
