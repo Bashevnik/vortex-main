@@ -1168,6 +1168,17 @@ body {
     margin: 0 auto;
 }
 
+.features-detailed__title {
+    font-family: var(--third-family);
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #f6f7f9;
+    margin-bottom: 5%;
+}
+
 /* --- Features Section --- */
 .features {
     background-color: #fff;

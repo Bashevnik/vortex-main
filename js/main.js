@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Глобальный слушатель кликов для открытия модального окна
     document.addEventListener('click', (e) => {
         // Добавляем все возможные варианты классов кнопок для открытия модального окна
-        const triggerSelector = '.btn-call, .cll-btn, .service__btn, .calc-btn-final, .hero_btn, .hero-btn, .stroitelniymusor_krasnodae_btn_call, .welcome-element-btn, .services_card_btn, .calculate__btn, .btn-primary, .cta-banner__btn, .hero_services .hero_btn, .take-an-order-btn, .stroitelniymusor_krasnodae_btn button';
+        const triggerSelector = '.btn-call, .cll-btn, .feature-card-detailed__btn, .service__btn, .calc-btn-final, .hero_btn, .hero-btn, .stroitelniymusor_krasnodae_btn_call, .welcome-element-btn, .services_card_btn, .calculate__btn, .btn-primary, .cta-banner__btn, .hero_services .hero_btn, .take-an-order-btn, .stroitelniymusor_krasnodae_btn button';
         const trigger = e.target.closest(triggerSelector);
 
         if (trigger) {
