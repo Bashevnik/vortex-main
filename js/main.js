@@ -3,7 +3,8 @@
 // ============================================================
 async function includeComponent(targetId, filePath) {
     try {
-        const response = await fetch(filePath);
+        const urlWithCacheBuster = `${filePath}?v=${Date.now()}`;
+        const response = await fetch(urlWithCacheBuster);
         if (!response.ok) throw new Error(`Не удалось загрузить: ${filePath}`);
         const html = await response.text();
         const placeholder = document.getElementById(targetId);
