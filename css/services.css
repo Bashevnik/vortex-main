@@ -1,11 +1,20 @@
 .hero_services {
-    background-image: url("../images/application_hero_img.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
     width: 100%;
-
     margin-bottom: 100px;
+}
+
+.hero_services__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 
 .hero_services_content {
@@ -13,8 +22,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    position: relative;
+    z-index: 2;
     padding: 220px 0 100px 0;
+}
+
+.hero_services_content .hero_title,
+.hero_services_content .hero_desk {
+    color: #f6f7f9;
+    text-align: center;
 }
 
 

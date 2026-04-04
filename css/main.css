@@ -629,7 +629,6 @@ body {
 
 .hero__content {
     max-width: 100%;
-    overflow: hidden;
 }
 
 .hero__badges {
@@ -1417,6 +1416,8 @@ body {
     line-height: 150%;
     text-align: justify;
     color: #252a01;
+    flex-grow: 1;
+    margin-bottom: 16px;
 }
 
 .feature-card-detailed__btn {
@@ -1465,6 +1466,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 /* ===== Верхний ряд: 3 карточки по 2 колонки ===== */
